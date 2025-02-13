@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Abrindo Deck Brainly</title>
+</head>
+<body>
+  <script>
+    // 1. Lê o deckId a partir da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const deckId = urlParams.get('deckId') || 'defaultId';
+    
+    // 2. Tenta abrir seu app com o esquema customizado
+    window.location = `brainly://deck/${deckId}`;
+
+    // 3. Se não abrir o app em 1s, redireciona pro fallback
+    setTimeout(() => {
+      window.location = "https://linktr.ee/itsbrainlybr";
+    }, 1000);
+  </script>
+</body>
+</html>
+
